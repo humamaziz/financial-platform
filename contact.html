@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — FinServe</title>
+  <meta name="description" content="Contact FinServe — demo team">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand" href="index.html">
+        <div class="logo">FS</div>
+        <div class="brand-text">
+          <strong>FinServe</strong>
+          <small>Financial Services Platform</small>
+        </div>
+      </a>
+      <button id="navToggle" class="nav-toggle">☰</button>
+      <nav id="mainNav" class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container content">
+    <section class="page-header">
+      <h1>Contact Us</h1>
+      <p class="lead">Leave a message for demo feedback or startup collaboration.</p>
+    </section>
+
+    <section class="card">
+      <form id="contactForm" class="form">
+        <label>Name <input id="cName" required></label>
+        <label>Email <input id="cEmail" type="email" required></label>
+        <label>Message <textarea id="cMessage" rows="5" required></textarea></label>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Send Message</button>
+          <button class="btn btn-outline" id="contactReset" type="button">Reset</button>
+        </div>
+      </form>
+      <div id="contactResult" class="muted" style="margin-top:12px"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>© 2025 FinServe</div>
+      <div class="muted">Made for WebWeave 2025</div>
+    </div>
+  </footer>
+</body>
+</html>

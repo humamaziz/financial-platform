@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Accounts — FinServe</title>
+  <meta name="description" content="Manage demo accounts — FinServe">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><div class="logo">FS</div><div class="brand-text"><strong>FinServe</strong></div></a>
+      <button id="navToggle" class="nav-toggle">☰</button>
+      <nav id="mainNav" class="nav">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="accounts.html" class="active">Accounts</a></li>
+          <li><a href="transactions.html">Transactions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container content">
+    <section class="page-header">
+      <h1>Accounts</h1>
+      <p class="lead">Create demo accounts and view balances. These changes are stored locally in the browser.</p>
+    </section>
+
+    <section class="accounts-grid" id="accountsList" style="margin-top:12px"></section>
+
+    <section class="card" style="margin-top:12px">
+      <h3>Create Account (Demo)</h3>
+      <form id="createAccountForm" class="form">
+        <label>Name <input id="newAccName" required></label>
+        <label>Type <select id="newAccType"><option value="checking">Checking</option><option value="savings">Savings</option><option value="investments">Investments</option></select></label>
+        <label>Initial Balance (₹) <input id="newAccBalance" type="number" value="0"></label>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Create Account</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid">© 2025 FinServe</div></footer>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calculator — FinServe</title>
+  <meta name="description" content="EMI and investment calculators — FinServe">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand" href="index.html">
+        <div class="logo">FS</div>
+        <div class="brand-text">
+          <strong>FinServe</strong>
+          <small>Financial Services Platform</small>
+        </div>
+      </a>
+      <button id="navToggle" class="nav-toggle">☰</button>
+      <nav id="mainNav" class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="calculator.html" class="active">Calculator</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="account.html">Account</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container content">
+    <section class="page-header">
+      <h1>Calculators</h1>
+      <p class="lead">EMI (Loan) Calculator and Investment Growth Simulator — interact live and show results to judges.</p>
+    </section>
+
+    <section class="grid-2">
+      <div class="card">
+        <h3>EMI / Loan Calculator</h3>
+        <form id="emiForm" class="form">
+          <label>Principal (₹) <input id="emiPrincipal" type="number" placeholder="100000" required></label>
+          <label>Rate (p.a. %) <input id="emiRate" type="number" step="0.01" placeholder="8.5" required></label>
+          <label>Tenure (years) <input id="emiYears" type="number" placeholder="3" required></label>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Calculate EMI</button>
+            <button class="btn btn-outline" id="emiReset" type="button">Reset</button>
+          </div>
+        </form>
+        <div id="emiResult" class="muted" aria-live="polite" style="margin-top:12px"></div>
+      </div>
+
+      <div class="card">
+        <h3>Investment Growth Simulator</h3>
+        <form id="invForm" class="form">
+          <label>Principal (₹) <input id="invPrincipal" type="number" placeholder="10000"></label>
+          <label>Annual Rate (%) <input id="invRate" type="number" step="0.1" placeholder="7.5"></label>
+          <label>Years <input id="invYears" type="number" placeholder="5"></label>
+          <label>Monthly Contribution (₹) <input id="invContrib" type="number" placeholder="1000"></label>
+          <div class="form-actions">
+            <button class="btn btn-primary" id="invCalc">Simulate</button>
+            <button class="btn btn-outline" id="invReset" type="button">Reset</button>
+          </div>
+        </form>
+
+        <div id="invOutput" style="margin-top:12px"></div>
+        <canvas id="invChart" width="600" height="300" aria-label="Investment projection chart"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">© 2025 FinServe</div>
+  </footer>
+</body>
+</html>

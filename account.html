@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Account — FinServe</title>
+  <meta name="description" content="Balance tracker — FinServe">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand" href="index.html">
+        <div class="logo">FS</div>
+        <div class="brand-text">
+          <strong>FinServe</strong>
+          <small>Financial Services Platform</small>
+        </div>
+      </a>
+      <button id="navToggle" class="nav-toggle">☰</button>
+      <nav id="mainNav" class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="calculator.html">Calculator</a></li>
+          <li><a href="account.html" class="active">Account</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container content">
+    <section class="page-header">
+      <h1>My Account & Balance Tracker</h1>
+      <p class="lead">Starting balance is <strong>₹0</strong>. Use the controls below to add deposits (income) or expenses. Anaya (Accounts) can demo how she manages finances live.</p>
+    </section>
+
+    <section class="card">
+      <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center">
+        <div>
+          <div class="muted">Current Balance</div>
+          <div style="font-size:28px;font-weight:800" id="currentBalance">₹0.00</div>
+          <div class="small muted">Last updated: <span id="balanceUpdated">—</span></div>
+        </div>
+
+        <div style="flex:1;min-width:260px">
+          <h3>Update Balance</h3>
+          <form id="balanceForm" class="form">
+            <label>Type
+              <select id="balanceType">
+                <option value="deposit">Deposit / Income</option>
+                <option value="expense">Expense</option>
+              </select>
+            </label>
+            <label>Amount (₹) <input id="balanceAmount" type="number" inputmode="numeric" required></label>
+            <label>Description <input id="balanceDesc" placeholder="Salary / Grocery / Fee"></label>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Apply</button>
+              <button class="btn btn-outline" id="resetBalance" type="button">Reset to ₹0</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:12px">
+      <h3>Balance History</h3>
+      <div style="overflow:auto;max-height:240px">
+        <table>
+          <thead><tr><th>Date</th><th>Type</th><th>Description</th><th>Amount</th><th>Balance After</th></tr></thead>
+          <tbody id="balanceHistory"></tbody>
+        </table>
+      </div>
+      <div style="margin-top:10px;display:flex;gap:8px">
+        <button id="exportBalanceCsv" class="btn">Export History CSV</button>
+        <button id="clearHistory" class="btn btn-outline">Clear History</button>
+      </div>
+      <div class="muted small" style="margin-top:8px">Tip: Use this during the presentation to demonstrate how Anaya manages accounting entries.</div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">© 2025 FinServe</div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Demo Dashboard — FinServe</title>
+  <meta name="description" content="Demo dashboard for FinServe — accounts, transfers, transactions, simulator">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <div class="logo">FS</div>
+        <div class="brand-text">
+          <strong>FinServe</strong>
+          <small>Financial Services Platform</small>
+        </div>
+      </a>
+      <button id="navToggle" class="nav-toggle">☰</button>
+      <nav id="mainNav" class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html" class="active">Demo</a></li>
+          <li><a href="accounts.html">Accounts</a></li>
+          <li><a href="transactions.html">Transactions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container dashboard">
+    <section class="dash-grid">
+      <div class="panel overview-panel card">
+        <h2>Overview</h2>
+        <div class="overview">
+          <div class="stat">
+            <div class="stat-value" id="totalBalance">₹0</div>
+            <div class="stat-label">Total Balance</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value" id="savingsBalance">₹0</div>
+            <div class="stat-label">Savings</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value" id="investBalance">₹0</div>
+            <div class="stat-label">Investments</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel transfer-panel card">
+        <h2>Quick Transfer</h2>
+        <form id="transferForm" class="form">
+          <label>From
+            <select id="fromAcc"></select>
+          </label>
+          <label>To
+            <select id="toAcc"></select>
+          </label>
+          <label>Amount (₹)
+            <input id="transferAmt" inputmode="numeric" />
+          </label>
+          <div class="form-actions">
+            <button id="doTransfer" class="btn btn-primary">Transfer</button>
+            <button id="resetData" class="btn btn-outline" type="button">Reset Demo</button>
+          </div>
+          <div id="transferMsg" class="muted small" style="margin-top:8px"></div>
+        </form>
+      </div>
+
+      <div class="panel invest-panel card">
+        <h2>Investment Projection</h2>
+        <label>Principal (₹) <input id="principal" inputmode="numeric" value="10000"></label>
+        <label>Annual Rate (%) <input id="rate" inputmode="numeric" value="8"></label>
+        <label>Years <input id="years" inputmode="numeric" value="5"></label>
+        <label>Monthly Contribution (₹) <input id="contrib" inputmode="numeric" value="2000"></label>
+        <div class="form-actions">
+          <button id="calcInvest" class="btn btn-primary">Calculate</button>
+          <button id="seedData" class="btn btn-outline" type="button">Seed Demo Data</button>
+        </div>
+        <div id="investResults" style="margin-top:8px"></div>
+        <canvas id="investChart" width="600" height="220" aria-label="Investment chart" style="margin-top:10px"></canvas>
+      </div>
+    </section>
+
+    <section class="panel card" style="margin-top:16px">
+      <h2>Transactions</h2>
+      <div class="tx-controls">
+        <label>Account <select id="filterAcc"></select></label>
+        <label>Type <select id="typeFilter"><option value="all">All</option><option value="credit">Credit</option><option value="debit">Debit</option></select></label>
+        <input id="searchTx" placeholder="Search description" />
+        <button id="clearFilter" class="btn btn-outline">Clear</button>
+        <button id="exportCsv" class="btn">Export CSV</button>
+      </div>
+
+      <div class="transactions-table" style="margin-top:12px;overflow:auto;max-height:260px">
+        <table>
+          <thead><tr><th>Date</th><th>Account</th><th>Description</th><th>Type</th><th>Amount</th></tr></thead>
+          <tbody id="txBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">© 2025 FinServe — Demo</div>
+  </footer>
+</body>
+</html>
