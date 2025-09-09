@@ -6,25 +6,22 @@
   <title>FinServe — Smart Personal Finance</title>
   <meta name="description" content="FinServe — demo financial services platform. Savings, investments, transfers, calculators.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <!-- Optional Font Awesome; replace yourkitid or remove if not using -->
-  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- NAV -->
+
   <header class="site-header">
     <div class="nav-inner container">
       <a class="brand" href="index.html" aria-label="FinServe Home">
         <div class="logo">FS</div>
         <div class="brand-text">
-          <strong>FinServe</strong>
-          <small>Financial Services Platform</small>
+          <span class="brand-name">FinServe</span>
+          <span class="brand-tagline">Financial Services Platform</span>
         </div>
       </a>
-
-      <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">☰</button>
-
+      <button id="navToggle" class="nav-toggle" aria-label="Toggle menu" aria-controls="mainNav" aria-expanded="false">☰</button>
       <nav id="mainNav" class="nav" aria-label="Main navigation">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
@@ -38,83 +35,74 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <main>
     <section class="hero container">
       <div class="hero-left">
-        <h1>FinServe — Make smarter financial decisions</h1>
-        <p class="lead">Track accounts, simulate investments, and manage money with a polished interface — demo-ready for WebWeave and startup-ready later.</p>
+        <h1>Your Financial Journey Starts Here</h1>
+        <p class="lead">Get a clear view of your money, plan for the future, and achieve your goals with ease. Welcome to a smarter way to manage your finances.</p>
         <div class="cta">
-          <a href="services.html" class="btn btn-primary">Explore Services</a>
-          <a href="account.html" class="btn btn-outline">Open My Account</a>
+          <a href="account.html" class="btn btn-primary">Go to My Dashboard</a>
         </div>
-
-        <ul class="feature-list">
-          <li><span class="badge">✓</span> Multi-account ledger & transaction tools</li>
-          <li><span class="badge">✓</span> Investment projection & charting</li>
-          <li><span class="badge">✓</span> CSV export, demo seed, and offline-friendly behavior</li>
-        </ul>
       </div>
-
       <div class="hero-right" aria-hidden="true">
-        <img class="hero-mock" src="https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=2a7c7e4b4d6f8b3e9c6f2b3f5f2c9e1f" alt="Finance illustration">
+        <img class="hero-mock" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1400&auto=format&fit=crop" alt="A clean and modern financial dashboard interface.">
       </div>
     </section>
 
-    <!-- QUICK FEATURES -->
-    <section class="container features">
-      <article class="card feature">
-        <div class="icon"><i class="fas fa-wallet"></i></div>
-        <h3>Accounts & Ledger</h3>
-        <p>Multiple accounts with clear transaction history and CSV export for reporting.</p>
-      </article>
-
-      <article class="card feature">
-        <div class="icon"><i class="fas fa-chart-line"></i></div>
-        <h3>Investment Simulator</h3>
-        <p>Visualize compounding returns with monthly contributions and different scenarios.</p>
-      </article>
-
-      <article class="card feature">
-        <div class="icon"><i class="fas fa-file-export"></i></div>
-        <h3>Export & Demo Tools</h3>
-        <p>Seed demo data for consistent judging flow and export transaction history.</p>
-      </article>
-    </section>
-
-    <!-- TRUST & CTA -->
-    <section class="container trust">
-      <div class="trust-left">
-        <h2>Why FinServe is a great starting point</h2>
-        <p class="muted">Designed as a reliable client-side demo so you can present offline — and easily extend to a real startup with a backend later.</p>
-        <ol>
-          <li>Reliable demo (localStorage) — no network dependency for judges.</li>
-          <li>Modular JS — Aamaan can add Python backend (Flask/FastAPI).</li>
-          <li>Clear UX — Anaya will manage accounts and finance content.</li>
-        </ol>
-      </div>
-
-      <div class="trust-right" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=e4f0b12f8d4a7d1e5b9b3a9f6f0f1a2b" alt="Teamwork">
-      </div>
-    </section>
-
-    <!-- BOTTOM CTA -->
-    <section class="container bottom-cta">
-      <div class="cta-card card">
-        <div>
-          <h3>Ready to demo</h3>
-          <p class="muted">Open the Account page to show your live balance tracker (starts at ₹0) and show transfers and the investment simulator.</p>
+    <section class="container interactive-tool">
+      <h2>See Your Future Growth</h2>
+      <p class="muted">Use our quick calculator to see how small, consistent investments can grow over time.</p>
+      <div class="card calculator-card">
+        <div class="calc-inputs">
+          <div>
+            <label for="monthly-investment">Monthly Investment (₹)</label>
+            <input type="number" id="monthly-investment" value="5000">
+          </div>
+          <div>
+            <label for="years">For How Many Years?</label>
+            <input type="number" id="years" value="10">
+          </div>
+          <div>
+            <label for="return-rate">Estimated Annual Return (%)</label>
+            <input type="number" id="return-rate" value="12">
+          </div>
         </div>
-        <div class="cta">
-          <a href="account.html" class="btn btn-primary">Open Account Tracker</a>
-          <a href="dashboard.html" class="btn btn-outline" style="display:none">Demo Dashboard</a>
+        <div class="calc-result">
+          <span>Potential Wealth</span>
+          <strong id="future-value">₹11,61,695</strong>
         </div>
       </div>
     </section>
+
+    <section class="container steps">
+      <article class="step">
+        <div class="icon"><i class="fas fa-link" aria-hidden="true"></i></div>
+        <h3>1. Create an Account</h3>
+        <p>Get started in seconds. Create your first account to track your balance and transactions all in one place.</p>
+      </article>
+      <article class="step">
+        <div class="icon"><i class="fas fa-money-bill-transfer" aria-hidden="true"></i></div>
+        <h3>2. Track Your Money</h3>
+        <p>Log deposits, transfers, and expenses. See a clear history of your financial activity to understand your habits.</p>
+      </article>
+      <article class="step">
+        <div class="icon"><i class="fas fa-chart-pie" aria-hidden="true"></i></div>
+        <h3>3. Plan Your Future</h3>
+        <p>Use our simulators and calculators to project investment growth and make smarter financial decisions.</p>
+      </article>
+    </section>
+
+    <section class="container testimonial">
+        <div class="card">
+            <blockquote>
+                "FinServe finally made it easy for me to see all my finances in one place. The investment simulator is a game-changer for planning my future!"
+                <cite>— A Happy User</cite>
+            </blockquote>
+        </div>
+    </section>
+
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -122,10 +110,11 @@
         <div class="muted">WebWeave 2025 • Demo by Humam &amp; Aamaan (Coding) • Anaya (Accounts)</div>
       </div>
       <div class="socials">
-        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="FinServe on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a href="#" aria-label="FinServe on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
       </div>
     </div>
   </footer>
+
 </body>
 </html>
